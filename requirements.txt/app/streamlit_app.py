@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.metrics import accuracy_score
 
+
 ROOT = Path(__file__).resolve().parents[1]
 DATASETS = {
     "UNSW-NB15": ROOT / "Datasets" / "UNSW-NB15",
@@ -17,7 +18,6 @@ MODELS = {
 
 st.set_page_config(page_title="Network Anomaly Detection", page_icon="🛡️")
 st.title("Network Anomaly Detection")
-
 dataset_name = st.selectbox("Choose dataset model", list(DATASETS))
 st.write("Upload a CSV containing network-flow columns to classify each row.")
 
@@ -78,7 +78,6 @@ if uploaded_files:
             suspicious_rows = total_rows - int(prediction_counts.loc[normal_key, "rows"])
         else:
             suspicious_rows = total_rows
-
         metric_columns = st.columns(3)
         metric_columns[0].metric("Rows processed", f"{total_rows:,}")
         metric_columns[1].metric("Prediction classes", len(prediction_counts))
