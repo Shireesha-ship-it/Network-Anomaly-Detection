@@ -2,17 +2,6 @@
 __pycache__/
 *.pyc
 
-# Large datasets and generated prediction exports
-Datasets/
-*.csv
-*.parquet
-
-# Generated model artifacts and temporary outputs
-models/*.joblib
-models/*_metrics.json
-predictions*.csv
-cic_ids2017_all_predictions.csv
-
 # Local editor and OS files
 .vscode/
 Thumbs.db
